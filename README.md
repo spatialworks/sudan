@@ -5,6 +5,12 @@
 
 <!-- badges: start -->
 
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Travis build
+status](https://travis-ci.org/spatialworks/sudan.svg?branch=master)](https://travis-ci.org/spatialworks/sudan)
+[![AppVeyor build
+status](https://ci.appveyor.com/api/projects/status/github/spatialworks/sudan?branch=master&svg=true)](https://ci.appveyor.com/project/spatialworks/sudan)
 <!-- badges: end -->
 
 Designing surveys require relevant datasets to be used as basis for
