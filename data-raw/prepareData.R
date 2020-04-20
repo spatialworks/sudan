@@ -1,5 +1,6 @@
 ## Libraries
 
+library(sudan)
 library(pdftools)
 library(stringr)
 
@@ -78,7 +79,7 @@ northern <- sd_get_pop_locality(corpus = temp,
                                 state = "Northern State",
                                 localities = localities)
 
-################### River Nile - pages 40-57 ####################
+################### River Nile - pages 40-57 ###################################
 
 temp <- str_split(x[40:57], "\n")
 
@@ -110,6 +111,79 @@ riverNile <- sd_get_pop_locality(corpus = temp,
                                  localities = localities)
 
 
+################### Red Sea - pages 62-85 ###################################
 
+temp <- str_split(x[62:85], "\n")
+
+localities <- c("Halayib",
+                "Alghanib",
+                "Port Sudan",
+                "Sawaakin",
+                "Sinkat",
+                "Hayaa",
+                "Toakar",
+                "Aqeeg")
+
+redSea <- sd_get_pop_locality(corpus = temp,
+                              state = "Red Sea State",
+                              localities = localities)
+
+
+################### Kassala - pages 90-122 ###################################
+
+temp <- str_split(x[90:122], "\n")
+
+localities <- c("Eldalta",
+                "Hamashkoreeb",
+                "Talkook",
+                "Aroma Rural",
+                "Kassala West",
+                "Kassala Town",
+                "Kassala Rural",
+                "New Halfa",
+                "Nahr Atbara",
+                "Khashm Elgirba",
+                "Wad Alhilaio")
+
+kassala <- sd_get_pop_locality(corpus = temp,
+                               state = "Kassala State",
+                               localities = localities)
+
+
+##################### Gadarif - pages 127-156 ###################################
+
+temp <- str_split(x[127:156], "\n")
+
+localities <- c("Albutana",
+                "Alfashaqaa",
+                "Algadarif Central",
+                "Algadarif Town",
+                "Alfaow",
+                "Alrrahad",
+                "Qalaannahaal",
+                "Algallabat West (Kassab)",
+                "Algooraishaa",
+                "Alqalabat East")
+
+kassala <- sd_get_pop_locality(corpus = temp,
+                               state = "Gadarif State",
+                               localities = localities)
+
+
+##################### Khartoum - pages 161-181 #################################
+
+temp <- str_split(x[161:181], "\n")
+
+localities <- c("Omdorman",
+                "Karari",
+                "Ombadaa",
+                "Bahri",
+                "Shareq Alneel",
+                "Alkhartoum",
+                "Jabal Awliya")
+
+kassala <- sd_get_pop_locality(corpus = temp,
+                               state = "Khartoum State",
+                               localities = localities)
 
 
