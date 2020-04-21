@@ -4,7 +4,10 @@
     <loc>https://spatialworks.io/sudan/index.html</loc>
   </url>
   <url>
-    <loc>https://spatialworks.io/sudan/reference/population.html</loc>
+    <loc>https://spatialworks.io/sudan/reference/population_CBS.html</loc>
+  </url>
+  <url>
+    <loc>https://spatialworks.io/sudan/reference/population_UNFPA.html</loc>
   </url>
   <url>
     <loc>https://spatialworks.io/sudan/reference/sd_get_page_locality.html</loc>
