@@ -1,0 +1,29 @@
+title: sudan
+url: https://spatialworks.io/sudan
+template:
+  params:
+    bootswatch: sandstone
+    #ganalytics: UA-102485058-4
+
+#home:
+  #strip_header: true
+#  links:
+#  - text: Read more about the WHO Growth Standards
+#    href: https://www.who.int/childgrowth/en/
+#
+#  - text: Read more about MUAC-for-age z-scores development
+#    href: https://doi.org/10.1136/bmj.j3423
+
+reference:
+- title: Description
+  contents:
+  - sudan
+
+- title: Extract data from PDF
+  contents:
+  - sd_get_page_locality
+  - sd_get_pop_locality
+
+- title: Datasets
+  contents:
+  - population
