@@ -6,8 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Exract locality population data from a set of pages for a specific state
-from UNFPA's Sudan population projections for 2009-2020 — sd_get_pop_locality • sudan</title>
+<title>Changelog • sudan</title>
 
 
 <!-- jquery -->
@@ -40,10 +39,7 @@ from UNFPA's Sudan population projections for 2009-2020 — sd_get_pop_locality 
 
 
 
-<meta property="og:title" content="Exract locality population data from a set of pages for a specific state
-from UNFPA's Sudan population projections for 2009-2020 — sd_get_pop_locality" />
-<meta property="og:description" content="Exract locality population data from a set of pages for a specific state
-from UNFPA's Sudan population projections for 2009-2020" />
+<meta property="og:title" content="Changelog" />
 
 
 
@@ -62,7 +58,7 @@ from UNFPA's Sudan population projections for 2009-2020" />
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-topic">
+    <div class="container template-news">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -114,48 +110,30 @@ from UNFPA's Sudan population projections for 2009-2020" />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Exract locality population data from a set of pages for a specific state
-from UNFPA's Sudan population projections for 2009-2020</h1>
-    <small class="dont-index">Source: <a href='https://github.com/spatialworks/sudan/blob/master/R/01-sd_get_pop.R'><code>R/01-sd_get_pop.R</code></a></small>
-    <div class="hidden name"><code>sd_get_pop_locality.Rd</code></div>
+      <h1 data-toc-skip>Changelog <small></small></h1>
+      <small>Source: <a href='https://github.com/spatialworks/sudan/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
-    <div class="ref-description">
-    <p>Exract locality population data from a set of pages for a specific state
-from UNFPA's Sudan population projections for 2009-2020</p>
-    </div>
-
-    <pre class="usage"><span class='fu'>sd_get_pop_locality</span>(<span class='no'>corpus</span>, <span class='no'>state</span>, <span class='no'>localities</span>)</pre>
-
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>corpus</th>
-      <td><p>An object representing text data extracted from the UNPFA
-Sudan population projections for a specific state. This is extracted using
-the <code>pdf_text()</code> function from the <code>pdftools</code> package</p></td>
-    </tr>
-    <tr>
-      <th>state</th>
-      <td><p>Name of state to which current data is for</p></td>
-    </tr>
-    <tr>
-      <th>localities</th>
-      <td><p>A vector of localities name for the given state</p></td>
-    </tr>
-    </table>
-
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>A data.frame of population data for localities in a given state</p>
-
+    <div id="sudan-0-1-0" class="section level1">
+<h1 class="page-header" data-toc-text="0.1.0">
+<a href="#sudan-0-1-0" class="anchor"></a>sudan 0.1.0</h1>
+<ul>
+<li><p>Created <code>get</code> functions to extract data from PDF document of population projections for Sudan from 2009 to 2020 from UNFPA.</p></li>
+<li><p>Created population dataset using data extract from UNFPA population projections for Sudan from 2009 to 2020.</p></li>
+<li><p>Created <code>tidy</code> function to convert population dataset from UNFPA into long format.</p></li>
+<li><p>Added CI/CD via Travis and Appveyor</p></li>
+<li><p>Created package website using <code>pkgdown</code></p></li>
+<li><p>Added a <code>NEWS.md</code> file to track changes to the package.</p></li>
+</ul>
+</div>
   </div>
+
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
     </nav>
   </div>
+
 </div>
 
 
