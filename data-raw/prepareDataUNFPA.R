@@ -3,6 +3,7 @@
 library(sudan)
 library(pdftools)
 library(stringr)
+library(magrittr)
 
 ## Read population.pdf
 x <- pdf_text(pdf = "data-raw/population/populationEdited.pdf")
@@ -337,13 +338,10 @@ for(i in 1:nrow(xy)) {
 df <- data.frame(df[ , c(2:4, 6:8, 10:12, 14:16, 18:20, 22:24, 26:28, 30:32)],
                  stringsAsFactors = FALSE)
 ## Change population date to numeric
-for(i in 2:ncol(df)) {
+for(i in 1:ncol(df)) {
   df[ , i] <- as.numeric(df[ , i])
 }
-## Clean up age groups
-df[ , 1] <- stringr::str_replace_all(string = df[ , 1],
-                                     pattern = "_",
-                                     replacement = "-")
+
 ## Rename
 colNames <- NULL
 ##
@@ -740,5 +738,9 @@ population_UNFPA <- data.frame(rbind(northern, riverNile, redSea, kassala, gadar
                                      northKordofan, westKordofan, southKordofan,
                                      northDarfur, eastDarfur, centralDarfur,
                                      westDarfur, southDarfur))
+
+population_UNFPA$ageGrp <- ifelse(population_UNFPA$ageGrp %in% c("Total", "TOTAL"),
+                                  "All ages",
+                                  population_UNFPA$ageGrp)
 
 usethis::use_data(population_UNFPA, overwrite = TRUE, compress = "xz")
