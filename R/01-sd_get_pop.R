@@ -104,7 +104,7 @@ sd_get_pop_locality <- function(corpus, state, localities) {
 
   df <- data.frame(state = state,
                    locality = "",
-                   p1, p2, p3,
+                   p1, p2[ , 2:ncol(p2)], p3[ , 2:ncol(p3)],
                    stringsAsFactors = FALSE)
   ## Cycle through each remaining locality
   for(i in seq(from = 4, to = length(corpus), by = 3)) {
@@ -119,7 +119,7 @@ sd_get_pop_locality <- function(corpus, state, localities) {
                                period = 2017:2020)
     df <- rbind(df, data.frame(state = state,
                                locality = "",
-                               xx, xy, xz,
+                               xx, xy[ , 2:ncol(xy)], xz[ , 2:ncol(xz)],
                                stringsAsFactors = FALSE))
   }
   ##
