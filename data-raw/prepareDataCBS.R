@@ -101,7 +101,7 @@ ws2$locality[ws2$state == "Kassala"]
 ws2[ws2$state == "Kassala" & ws2$locality == "Reifi Kassala", "locality"] <- "Refi Kassala"
 ws2[ws2$state == "Kassala" & ws2$locality == "West Kassala", "locality"] <- "Rural Western Kassala"
 ws2[ws2$state == "Kassala" & ws2$locality == "Reifi Halfa", "locality"] <- "New Halfa"
-ws2[ws2$state == "Kassala" & ws2$locality == "Nahr Atbara", "locality"] <- "Refi Nahr Atbara"
+ws2[ws2$state == "Kassala" & ws2$locality == "Nahr Atbara ", "locality"] <- "Refi Nahr Atbara"
 ws2[ws2$state == "Kassala" & ws2$locality == "Reifi Algirba", "locality"] <- "Rural Khashm Elgirba"
 ws2[ws2$state == "Kassala" & ws2$locality == "Reifi Wed Hilaio", "locality"] <- "Rural Wad Elhilaiw"
 ws2[ws2$state == "Kassala" & ws2$locality == "Reifi Aroma ", "locality"] <- "Rural Aroma"
