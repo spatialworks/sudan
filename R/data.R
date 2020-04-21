@@ -1,7 +1,7 @@
 ################################################################################
 #
 #' Sudan population projections from 2009 to 2020 by 5-year age groups by state
-#' and locality
+#' and locality in wide format
 #'
 #' @format A data.frame of 39 columns and 3078 rows:
 #' \describe{
