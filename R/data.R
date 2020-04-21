@@ -47,12 +47,12 @@
 #' }
 #'
 #' @examples
-#' population
+#' population_UNFPA
 #'
 #' @source UNFPA Sudan Population Projections 2009-2020
 #'
 #
 ################################################################################
-"population"
+"population_UNFPA"
 
 
