@@ -5,7 +5,7 @@ library(pdftools)
 library(stringr)
 
 ## Read population.pdf
-x <- pdf_text(pdf = "data-raw/population/population.pdf")
+x <- pdf_text(pdf = "data-raw/population/populationEdited.pdf")
 
 ####################### States population - page 10 ############################
 
@@ -735,10 +735,10 @@ southDarfur <- sd_get_pop_locality(corpus = temp,
                                    localities = localities)
 
 
-population <- data.frame(rbind(northern, riverNile, redSea, kassala, gadarif,
-                               khartoum, gazira, whiteNile, sinnar, blueNile,
-                               northKordofan, westKordofan, southKordofan,
-                               northDarfur, eastDarfur, centralDarfur,
-                               westDarfur, southDarfur))
+population_UNFPA <- data.frame(rbind(northern, riverNile, redSea, kassala, gadarif,
+                                     khartoum, gazira, whiteNile, sinnar, blueNile,
+                                     northKordofan, westKordofan, southKordofan,
+                                     northDarfur, eastDarfur, centralDarfur,
+                                     westDarfur, southDarfur))
 
-usethis::use_data(population, overwrite = TRUE, compress = "xz")
+usethis::use_data(population_UNFPA, overwrite = TRUE, compress = "xz")
