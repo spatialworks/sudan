@@ -56,3 +56,24 @@
 "population_UNFPA"
 
 
+################################################################################
+#
+#' Sudan population projection 2018 by locality from Sudan Central Bureau of
+#' Statistics
+#'
+#' @format A data.frame of 3 columns and 189 rows:
+#' \describe{
+#'   \item{\code{state}}{State name}
+#'   \item{\code{locality}}{Locality name}
+#'   \item{\code{pop}}{Population}
+#' }
+#'
+#' @examples
+#' population_CBS
+#'
+#' @source Sudan Central Bureau of Statistics
+#'
+#
+################################################################################
+"population_CBS"
+
