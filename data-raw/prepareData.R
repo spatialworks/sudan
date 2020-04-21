@@ -95,22 +95,6 @@ riverNile <- sd_get_pop_locality(corpus = temp,
                                  localities = localities)
 
 
-################### River Nile - pages 40-57 ####################
-
-temp <- str_split(x[40:57], "\n")
-
-localities <- c("Elmatamma",
-                "Berbar",
-                "Atbara",
-                "Eldamar",
-                "Shendi",
-                "Ubu Hamad")
-
-riverNile <- sd_get_pop_locality(corpus = temp,
-                                 state = "River Nile State",
-                                 localities = localities)
-
-
 ################### Red Sea - pages 62-85 ###################################
 
 temp <- str_split(x[62:85], "\n")
@@ -152,22 +136,259 @@ kassala <- sd_get_pop_locality(corpus = temp,
 
 ##################### Gadarif - pages 127-156 ###################################
 
-temp <- str_split(x[127:156], "\n")
+temp <- str_split(x[127:129], "\n")
 
-localities <- c("Albutana",
-                "Alfashaqaa",
+p1 <- sd_get_page_locality(page = temp[[1]],
+                           startRow = 4,
+                           period = 2009:2012)
+p2 <- sd_get_page_locality(page = temp[[2]],
+                           startRow = 3,
+                           period = 2013:2016)
+
+## Extract tables
+temp1 <- temp[[3]][3:(3 + 16)] %>%
+  stringr::str_remove_all(pattern = ",")
+temp1 <- c(temp1[1],
+           "          0_4   99999   99999   99999   0_4   99999   99999   99999     ",
+           temp1[2:17])
+temp2 <- temp[[3]][(22):(39)] %>%
+  stringr::str_remove_all(pattern = ",")
+## Create joint data.frame
+xy <- cbind(stringr::str_split(string = temp1,
+                               pattern = " ",
+                               simplify = TRUE),
+            stringr::str_split(string = temp2,
+                               pattern = " ",
+                               simplify = TRUE))
+## Empty df to concatenate
+df <- NULL
+## Loop through rows of xy
+for(i in 1:nrow(xy)) {
+  ## Remove space
+  df <- rbind(df, xy[i, ][xy[i, ] != ""])
+}
+## Remove repeatings columns for age group
+df <- data.frame(df[ , c(1:4, 6:8, 10:12, 14:16)], stringsAsFactors = FALSE)
+## Change population date to numeric
+for(i in 2:ncol(df)) {
+  df[ , i] <- as.numeric(df[ , i])
+}
+## Clean up age groups
+df[ , 1] <- stringr::str_replace_all(string = df[ , 1],
+                                     pattern = "_",
+                                     replacement = "-")
+## Rename
+colNames <- NULL
+##
+for(i in 2017:2020) {
+  colNames <- c(colNames, paste(c("total", "male", "female"), i, sep = "_"))
+}
+##
+names(df) <- c("ageGrp", colNames)
+## replace 0-4 values
+df[2, 2:7] <- c(44814, NA, NA, 51800, 15465, 20607)
+
+##
+p3 <- df
+##
+df <- data.frame(state = "Gadarif State",
+                 locality = "Albutana",
+                 p1, p2[ , 2:ncol(p2)], p3[ , 2:ncol(p3)],
+                 stringsAsFactors = FALSE)
+##
+gadarif0 <- df
+
+##
+temp1 <- str_split(x[130:147], "\n")
+
+localities <- c("Alfashaqaa",
                 "Algadarif Central",
                 "Algadarif Town",
                 "Alfaow",
                 "Alrrahad",
-                "Qalaannahaal",
-                "Algallabat West (Kassab)",
-                "Algooraishaa",
+                "Qalaannahaal")
+
+## Cycle through each remaining locality
+df <- NULL
+for(i in seq(from = 1, to = length(temp1), by = 3)) {
+  xx <- sd_get_page_locality(page = temp1[[i]],
+                             startRow = 3,
+                             period = 2009:2012)
+  xy <- sd_get_page_locality(page = temp1[[i + 1]],
+                             startRow = 3,
+                             period = 2013:2016)
+  xz <- sd_get_page_locality(page = temp1[[i + 2]],
+                             startRow = 3,
+                             period = 2017:2020)
+  df <- rbind(df, data.frame(state = "Gadarif State",
+                             locality = "",
+                             xx, xy[ , 2:ncol(xy)], xz[ , 2:ncol(xz)],
+                             stringsAsFactors = FALSE))
+}
+##
+for(i in seq(from = 1, to = length(localities) * 18, by = 18)) {
+  df[i:(i + 17), "locality"] <- localities[((i - 1) / 18) + 1 ]
+}
+##
+gadarif1 <- df
+
+## Extract tables from half page 148
+temp1 <- str_split(x[148], "\n")[[1]][5:22] %>%
+  stringr::str_remove_all(pattern = ",")
+## Create joint data.frame
+xy <- stringr::str_split(string = temp1,
+                         pattern = " ",
+                         simplify = TRUE)
+## Empty df to concatenate
+df <- NULL
+## Loop through rows of xy
+for(i in 1:nrow(xy)) {
+  ## Remove space
+  df <- rbind(df, xy[i, ][xy[i, ] != ""])
+}
+## Remove repeatings columns for age group
+df <- data.frame(df[ , c(1:4, 6:8)], stringsAsFactors = FALSE)
+## Change population date to numeric
+for(i in 2:ncol(df)) {
+  df[ , i] <- as.numeric(df[ , i])
+}
+## Clean up age groups
+df[ , 1] <- stringr::str_replace_all(string = df[ , 1],
+                                     pattern = "_",
+                                     replacement = "-")
+## Rename
+colNames <- NULL
+##
+for(i in 2009:2010) {
+  colNames <- c(colNames, paste(c("total", "male", "female"), i, sep = "_"))
+}
+##
+names(df) <- c("ageGrp", colNames)
+##
+df1 <- df
+
+## Extract tables second half page 148
+temp2 <- str_split(x[148], "\n")[[1]][27:44] %>%
+  stringr::str_remove_all(pattern = ",")
+## Create joint data.frame
+xy <- stringr::str_split(string = temp1,
+                         pattern = " ",
+                         simplify = TRUE)
+## Empty df to concatenate
+df <- NULL
+## Loop through rows of xy
+for(i in 1:nrow(xy)) {
+  ## Remove space
+  df <- rbind(df, xy[i, ][xy[i, ] != ""])
+}
+## Remove repeatings columns for age group
+df <- data.frame(df[ , c(1:4, 6:8)], stringsAsFactors = FALSE)
+## Change population date to numeric
+for(i in 2:ncol(df)) {
+  df[ , i] <- as.numeric(df[ , i])
+}
+## Clean up age groups
+df[ , 1] <- stringr::str_replace_all(string = df[ , 1],
+                                     pattern = "_",
+                                     replacement = "-")
+## Rename
+colNames <- NULL
+##
+for(i in 2011:2012) {
+  colNames <- c(colNames, paste(c("total", "male", "female"), i, sep = "_"))
+}
+##
+names(df) <- c("ageGrp", colNames)
+##
+df2 <- df
+##
+gadarif2 <- data.frame(df1, df2[ , 2:7])
+
+## Extract tables page 149 to 150
+temp3 <- str_split(x[149:150], "\n")[[1]][3:20] %>%
+  stringr::str_remove_all(pattern = ",")
+temp4 <- str_split(x[149:150], "\n")[[1]][23:40] %>%
+  stringr::str_remove_all(pattern = ",")
+temp5 <- str_split(x[149:150], "\n")[[2]][3:20] %>%
+  stringr::str_remove_all(pattern = ",")
+temp6 <- str_split(x[149:150], "\n")[[2]][23:40] %>%
+  stringr::str_remove_all(pattern = ",")
+## Create joint data.frame
+xy <- cbind(stringr::str_split(string = temp3,
+                               pattern = " ",
+                               simplify = TRUE),
+            stringr::str_split(string = temp4,
+                               pattern = " ",
+                               simplify = TRUE),
+            stringr::str_split(string = temp5,
+                               pattern = " ",
+                               simplify = TRUE),
+            stringr::str_split(string = temp6,
+                               pattern = " ",
+                               simplify = TRUE))
+## Empty df to concatenate
+df <- NULL
+## Loop through rows of xy
+for(i in 1:nrow(xy)) {
+  ## Remove space
+  df <- rbind(df, xy[i, ][xy[i, ] != ""])
+}
+## Remove repeatings columns for age group
+df <- data.frame(df[ , c(2:4, 6:8, 10:12, 14:16, 18:20, 22:24, 26:28, 30:32)],
+                 stringsAsFactors = FALSE)
+## Change population date to numeric
+for(i in 2:ncol(df)) {
+  df[ , i] <- as.numeric(df[ , i])
+}
+## Clean up age groups
+df[ , 1] <- stringr::str_replace_all(string = df[ , 1],
+                                     pattern = "_",
+                                     replacement = "-")
+## Rename
+colNames <- NULL
+##
+for(i in 2013:2020) {
+  colNames <- c(colNames, paste(c("total", "male", "female"), i, sep = "_"))
+}
+##
+names(df) <- colNames
+##
+gadarif2 <- data.frame(state = "Gadarif State",
+                       locality = "Algallabat West (Kassab)",
+                       gadarif2, df)
+
+
+## Rest of pages
+temp7 <- str_split(x[151:156], "\n")
+
+localities <- c("Algooraishaa",
                 "Alqalabat East")
 
-gadarif <- sd_get_pop_locality(corpus = temp,
-                               state = "Gadarif State",
-                               localities = localities)
+## Cycle through each remaining locality
+df <- NULL
+for(i in seq(from = 1, to = length(temp7), by = 3)) {
+  xx <- sd_get_page_locality(page = temp7[[i]],
+                             startRow = 3,
+                             period = 2009:2012)
+  xy <- sd_get_page_locality(page = temp7[[i + 1]],
+                             startRow = 3,
+                             period = 2013:2016)
+  xz <- sd_get_page_locality(page = temp7[[i + 2]],
+                             startRow = 3,
+                             period = 2017:2020)
+  df <- rbind(df, data.frame(state = "Gadarif State",
+                             locality = "",
+                             xx, xy[ , 2:ncol(xy)], xz[ , 2:ncol(xz)],
+                             stringsAsFactors = FALSE))
+}
+##
+for(i in seq(from = 1, to = length(localities) * 18, by = 18)) {
+  df[i:(i + 17), "locality"] <- localities[((i - 1) / 18) + 1 ]
+}
+##
+gadarif3 <- df
+
+gadarif <- data.frame(rbind(gadarif0, gadarif1, gadarif2, gadarif3))
 
 
 ##################### Khartoum - pages 161-181 #################################
@@ -206,7 +427,8 @@ gazira <- sd_get_pop_locality(corpus = temp,
 
 ##################### White Nile - pages 211-234 ###############################
 
-temp <- str_split(x[211:234], "\n")
+## First 7 localities
+temp <- str_split(x[211:231], "\n")
 
 localities <- c("Algitaina",
                 "Omramtaa",
@@ -214,13 +436,72 @@ localities <- c("Algitaina",
                 "Rabak",
                 "Aljabalain",
                 "Kosti",
-                "Alssalam",
-                "Tandalti")
+                "Alssalam")
 
 whiteNile <- sd_get_pop_locality(corpus = temp,
                                  state = "White Nile State",
                                  localities = localities)
 
+temp <- str_split(x[232:234], "\n")
+
+p1 <- sd_get_page_locality(page = temp[[1]],
+                           startRow = 3,
+                           period = 2009:2012)
+p2 <- sd_get_page_locality(page = temp[[2]],
+                           startRow = 3,
+                           period = 2013:2016)
+
+## Extract tables
+temp1 <- temp[[3]][2:18] %>%
+  stringr::str_remove_all(pattern = ",")
+temp1 <- c(temp1[1],
+           "          5_9   99999   99999   99999   5_9   99999   99999   99999     ",
+           temp1[2:17])
+temp2 <- temp[[3]][21:38] %>%
+  stringr::str_remove_all(pattern = ",")
+## Create joint data.frame
+xy <- cbind(stringr::str_split(string = temp1,
+                               pattern = " ",
+                               simplify = TRUE),
+            stringr::str_split(string = temp2,
+                               pattern = " ",
+                               simplify = TRUE))
+## Empty df to concatenate
+df <- NULL
+## Loop through rows of xy
+for(i in 1:nrow(xy)) {
+  ## Remove space
+  df <- rbind(df, xy[i, ][xy[i, ] != ""])
+}
+## Remove repeatings columns for age group
+df <- data.frame(df[ , c(1:4, 6:8, 10:12, 14:16)], stringsAsFactors = FALSE)
+## Change population date to numeric
+for(i in 2:ncol(df)) {
+  df[ , i] <- as.numeric(df[ , i])
+}
+## Clean up age groups
+df[ , 1] <- stringr::str_replace_all(string = df[ , 1],
+                                     pattern = "_",
+                                     replacement = "-")
+## Rename
+colNames <- NULL
+##
+for(i in 2017:2020) {
+  colNames <- c(colNames, paste(c("total", "male", "female"), i, sep = "_"))
+}
+##
+names(df) <- c("ageGrp", colNames)
+## replace 0-4 values
+df[2, 2:7] <- c(79484, NA, 10331, 112920, 29399, 49867)
+p3 <- df
+
+df <- rbind(data.frame(state = "White Nile State",
+                       locality = "Tandalti",
+                       p1, p2[ , 2:ncol(p2)], p3[ , 2:ncol(p3)],
+                       stringsAsFactors = FALSE))
+
+##
+whiteNile <- data.frame(rbind(whiteNile, df))
 
 ##################### Sinnar - pages 239-259 ###############################
 
@@ -295,7 +576,7 @@ westKordofan <- sd_get_pop_locality(corpus = temp,
                                     localities = localities)
 
 
-###################### South Kordofan - pages 354-399 ##########################
+###################### North Kordofan - pages 354-399 ##########################
 
 temp <- str_split(x[354:398], "\n")
 
@@ -318,3 +599,146 @@ localities <- c("Al abassia",
 southKordofan <- sd_get_pop_locality(corpus = temp,
                                      state = "South Kordofan State",
                                      localities = localities)
+
+
+###################### South Kordofan - pages 354-398 ##########################
+
+temp <- str_split(x[354:398], "\n")
+
+localities <- c("Al abassia",
+                "Al rashaad",
+                "Abukarshola",
+                "Abujibaiha",
+                "Altadamon",
+                "Al Dalang",
+                "Algooz",
+                "Habeela",
+                "Dallami",
+                "Om Doorin",
+                "Kadoogli",
+                "Taloadi",
+                "Gadeer",
+                "Al Leeri",
+                "Al Reefalshargi")
+
+southKordofan <- sd_get_pop_locality(corpus = temp,
+                                     state = "South Kordofan State",
+                                     localities = localities)
+
+
+###################### North Darfur - pages 403-444 ##########################
+
+temp <- str_split(x[403:444], "\n")
+
+localities <- c("El Malha",
+                "Mellit",
+                "Sarf Omra",
+                "Alseraf",
+                "Kebkabiya",
+                "Kutum",
+                "Alkoma",
+                "El Fasher",
+                "Taweela",
+                "Um Kedada",
+                "Kalmando",
+                "Alliayied",
+                "Altowaisha",
+                "Alwaha")
+
+northDarfur <- sd_get_pop_locality(corpus = temp,
+                                   state = "North Darfur State",
+                                   localities = localities)
+
+
+###################### East Darfur - pages 449-478 #############################
+
+temp <- str_split(x[449:478], "\n")
+
+localities <- c("Shiairayya",
+                "Yaseen",
+                "Aldiain",
+                "Alfirdose",
+                "Asalaya",
+                "Abo-Jabra",
+                "Bahr-Alarab",
+                "Abu-Karinka",
+                "Adeela",
+                "Kilaikly Abu Salama")
+
+eastDarfur <- sd_get_pop_locality(corpus = temp,
+                                  state = "East Darfur State",
+                                  localities = localities)
+
+
+###################### Central Darfur - pages 483-503 ##########################
+
+temp <- str_split(x[483:503], "\n")
+
+localities <- c("Azoom",
+                "Zalingay",
+                "Nairtaty",
+                "Wadi Salih",
+                "Bindissi",
+                "Mukjar",
+                "Omdukhon")
+
+centralDarfur <- sd_get_pop_locality(corpus = temp,
+                                     state = "Central Darfur State",
+                                     localities = localities)
+
+
+######################### West Darfur - pages 508-528 ##########################
+
+temp <- str_split(x[508:528], "\n")
+
+localities <- c("Alginaina",
+                "Baidah",
+                "Forbaranga",
+                "Habeela",
+                "Kirainik",
+                "Koulbos",
+                "Sirba")
+
+westDarfur <- sd_get_pop_locality(corpus = temp,
+                                  state = "West Darfur State",
+                                  localities = localities)
+
+
+######################### South Darfur - pages 533-595 #########################
+
+temp <- str_split(x[533:595], "\n")
+
+localities <- c("Niyala South",
+                "Niyala North",
+                "Alwhda",
+                "Marshang",
+                "Kass",
+                "Id Alfursaan",
+                "Kubom",
+                "Kateela",
+                "Alsalam",
+                "Bilail",
+                "Tolus",
+                "Omdafoog",
+                "Shattaiya",
+                "Damasoa",
+                "Booram",
+                "Alssontaa",
+                "Nitaiga",
+                "Rihaid Albirdi",
+                "Greeda",
+                "Kadnair",
+                "Alrradoam")
+
+southDarfur <- sd_get_pop_locality(corpus = temp,
+                                   state = "South Darfur State",
+                                   localities = localities)
+
+
+population <- data.frame(rbind(northern, riverNile, redSea, kassala, gadarif,
+                               khartoum, gazira, whiteNile, sinnar, blueNile,
+                               northKordofan, westKordofan, southKordofan,
+                               northDarfur, eastDarfur, centralDarfur,
+                               westDarfur, southDarfur))
+
+usethis::use_data(population, overwrite = TRUE, compress = "xz")
