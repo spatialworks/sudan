@@ -12,6 +12,7 @@
 #' @keywords internal
 #' @importFrom stringr str_replace_all str_split str_remove_all
 #' @importFrom magrittr %>%
+#' @importFrom tidyr pivot_longer
 #'
 #'
 #
