@@ -98,7 +98,7 @@ ws2[ws2$state == "East Darfur" & ws2$locality == "Yaseen", "locality"] <- "Yassi
 ## Kassala
 ws2$locality[ws2$state == "Kassala"]
 ## Kassala Town - ok
-ws2[ws2$state == "Kassala" & ws2$locality == "Reifi Kassala", "locality"] <- "Refi Kassala"
+ws2[ws2$state == "Kassala" & ws2$locality == "Reifi Kassala", "locality"] <- "Refi Kassla"
 ws2[ws2$state == "Kassala" & ws2$locality == "West Kassala", "locality"] <- "Rural Western Kassala"
 ws2[ws2$state == "Kassala" & ws2$locality == "Reifi Halfa", "locality"] <- "New Halfa"
 ws2[ws2$state == "Kassala" & ws2$locality == "Nahr Atbara ", "locality"] <- "Refi Nahr Atbara"
@@ -145,7 +145,7 @@ ws2$locality[ws2$state == "North Kourdofan"]
 ## Sheikan - ok
 ws2[ws2$state == "North Kourdofan" & ws2$locality == "Umrowaba", "locality"] <- "Um Rawaba"
 ws2[ws2$state == "North Kourdofan" & ws2$locality == "Umdam", "locality"] <- "Um Dam Haj Ahmed"
-ws2[ws2$state == "North Kourdofan" & ws2$locality == "Elrahad", "locality"] <- "El Rahad"
+ws2[ws2$state == "North Kourdofan" & ws2$locality == "Elrahad ", "locality"] <- "El Rahad"
 ## Bara - ok
 ws2[ws2$state == "North Kourdofan" & ws2$locality == "Ewest Bara ", "locality"] <- "Gharb Bara"
 ws2[ws2$state == "North Kourdofan" & ws2$locality == "Sodary ", "locality"] <- "Soudari"
@@ -171,7 +171,7 @@ ws2[ws2$state == "Red Sea" & ws2$locality == "Seinkat", "locality"] <- "Sinkat"
 ws2[ws2$state == "Red Sea" & ws2$locality == "Dordaib", "locality"] <- "Dordieb"
 ws2[ws2$state == "Red Sea" & ws2$locality == "Toker", "locality"] <- "Tokar"
 ws2[ws2$state == "Red Sea" & ws2$locality == "Ageeg", "locality"] <- "Agig"
-ws2[ws2$state == "Red Sea" & ws2$locality == "Gabait", "locality"] <- "Gabaot Elma-aadin"
+ws2[ws2$state == "Red Sea" & ws2$locality == "Gabait ", "locality"] <- "Gabaot Elma-aadin"
 ws2[ws2$state == "Red Sea" & ws2$locality == "Halaib", "locality"] <- "Halaeeb"
 
 ## River Nile
