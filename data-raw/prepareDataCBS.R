@@ -142,7 +142,7 @@ ws2[ws2$state == "North Darfur" & ws2$locality == "Kranoy", "locality"] <- "Kern
 
 ## North Kourdofan
 ws2$locality[ws2$state == "North Kourdofan"]
-## Sheikan - ok
+ws2[ws2$state == "North Kourdofan" & ws2$locality == "Sheikan ", "locality"] <- "Sheikan"
 ws2[ws2$state == "North Kourdofan" & ws2$locality == "Umrowaba", "locality"] <- "Um Rawaba"
 ws2[ws2$state == "North Kourdofan" & ws2$locality == "Umdam", "locality"] <- "Um Dam Haj Ahmed"
 ws2[ws2$state == "North Kourdofan" & ws2$locality == "Elrahad ", "locality"] <- "El Rahad"
