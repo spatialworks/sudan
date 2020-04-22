@@ -88,7 +88,7 @@ ws2$locality[ws2$state == "East Darfur"]
 ## Abu Jabra - ok
 ## Abu Karinka - ok
 ws2[ws2$state == "East Darfur" & ws2$locality == "Bahr Alarab", "locality"] <- "Bahr El Arab"
-ws2[ws2$state == "East Darfur" & ws2$locality == "Adeila", "locality"] <- "Adila"
+ws2[ws2$state == "East Darfur" & ws2$locality == "Adeila ", "locality"] <- "Adila"
 ws2[ws2$state == "East Darfur" & ws2$locality == "Aldein", "locality"] <- "Ed Dain"
 ## Assalaya - ok
 ws2[ws2$state == "East Darfur" & ws2$locality == "El Firduce", "locality"] <- "El Firdous"
