@@ -253,10 +253,10 @@ ws2[ws2$state == "West Darfur" & ws2$locality == "Sirba ", "locality"] <- "Sirba
 ## West Kourdofan
 ws2$locality[ws2$state == "West Kourdofan"]
 ws2[ws2$state == "West Kourdofan" & ws2$locality == "Abu zabad", "locality"] <- "Abu Zabad"
-ws2[ws2$state == "West Kourdofan" & ws2$locality == "Elkhawi", "locality"] <- "ElKhiwai"
+ws2[ws2$state == "West Kourdofan" & ws2$locality == "Elkhawi ", "locality"] <- "ElKhiwai"
 ws2[ws2$state == "West Kourdofan" & ws2$locality == "Gebaish", "locality"] <- "Ghubaish"
 ws2[ws2$state == "West Kourdofan" & ws2$locality == "Alodia", "locality"] <- "El Idia"
-ws2[ws2$state == "West Kourdofan" & ws2$locality == "Elnuhood", "locality"] <- "El Nuhud"
+ws2[ws2$state == "West Kourdofan" & ws2$locality == "Elnuhood ", "locality"] <- "El Nuhud"
 ws2[ws2$state == "West Kourdofan" & ws2$locality == "Wad Banda ", "locality"] <- "Wad Benda"
 ## Lagawa - ok
 ws2[ws2$state == "West Kourdofan" & ws2$locality == "Alsenoot", "locality"] <- "Elsunut"
