@@ -279,6 +279,27 @@ ws2[ws2$state == "White Nile" & ws2$locality == "Eldueim", "locality"] <- "El Di
 ws2[ws2$state == "White Nile" & ws2$locality == "Umrimta", "locality"] <- "Um Rimta"
 ws2[ws2$state == "White Nile" & ws2$locality == "Elgetaina", "locality"] <- "El Gitaina"
 
+## Add missing populations
+ws2[ws2$state == "Blue Nile" & ws2$locality == "Wad El Mahi", "pop"] <- 158343
+ws2[ws2$state == "Central Darfur" & ws2$locality == "North Jebel Mara", "pop"] <- 119677
+ws2[ws2$state == "Central Darfur" & ws2$locality == "Central Jebel Mara", "pop"] <- 145841
+ws2[ws2$state == "Al-Gazeera" & ws2$locality == "El Qurashi", "pop"] <- 629576
+ws2[ws2$state == "Al-Gadarif" & ws2$locality == "El Mafaza", "pop"] <- 230581
+ws2[ws2$state == "Al-Gadarif" & ws2$locality == "Basunda", "pop"] <- 158040
+ws2[ws2$state == "North Darfur" & ws2$locality == "Dar Elsalam", "pop"] <- 162656
+ws2[ws2$state == "North Darfur" & ws2$locality == "Um Baru", "pop"] <- 137447
+ws2[ws2$state == "North Darfur" & ws2$locality == "El Tina", "pop"] <- 102008
+ws2[ws2$state == "North Darfur" & ws2$locality == "Kernoi", "pop"] <- 104654
+ws2[ws2$state == "Red Sea" & ws2$locality == "Dordieb", "pop"] <- 39900
+ws2[ws2$state == "Red Sea" & ws2$locality == "Gabaot Elma-aadin", "pop"] <- 40514
+ws2[ws2$state == "River Nile" & ws2$locality == "El Buhaira", "pop"] <- 34322
+ws2[ws2$state == "South Kourdofan" & ws2$locality == "Alburam", "pop"] <- 44653
+ws2[ws2$state == "South Kourdofan" & ws2$locality == "Heban", "pop"] <- 131134
+ws2[ws2$state == "West Darfur" & ws2$locality == "Jebel Moon", "pop"] <- 123217
+ws2[ws2$state == "West Kourdofan" & ws2$locality == "Abyei", "pop"] <- 118366
+ws2[ws2$state == "West Kourdofan" & ws2$locality == "El Meiram", "pop"] <- 81500
+ws2[ws2$state == "White Nile" & ws2$locality == "Guli", "pop"] <- 169650
+
 ##
 population_CBS <- ws2
 
