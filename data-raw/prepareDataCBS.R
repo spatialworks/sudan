@@ -303,6 +303,23 @@ ws2[ws2$state == "White Nile" & ws2$locality == "Guli", "pop"] <- 169650
 ##
 population_CBS <- ws2
 
-## Save in .rda
+## Save in .rda format
 usethis::use_data(population_CBS, overwrite = TRUE, compress = "xz")
+
+## Create S3M-specific population dataset
+population_S3M <- ws2
+
+## Add populations for IDP camps
+population_S3M <- rbind(population_S3M,
+                        c("South Darfur", "Kalma camp", 126172),
+                        c("West Darfur", "Mornie camp", 40775),
+                        c("North Darfur", "Zamzam camp", 107132))
+
+## Convert pop to numeric
+population_S3M$pop <- as.numeric(population_S3M$pop)
+
+## Save in .rda format
+usethis::use_data(population_S3M, overwrite = TRUE, compress = "xz")
+
+
 
