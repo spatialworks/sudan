@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# sudan: Datasets for use in designing surveys in Sudan
+# sudan: Datasets for use in designing surveys in Sudan <img src="https://www.cia.gov/library/publications/the-world-factbook/attachments/flags/SU-flag.gif" width="200px" align="right" />
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
