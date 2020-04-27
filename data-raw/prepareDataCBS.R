@@ -63,7 +63,7 @@ ws2[ws2$state == "Al-Gazeera" & ws2$locality == "algurashi", "locality"] <- "El 
 
 ## Blue Nile
 ws2$locality[ws2$state == "Al-Gazeera"]
-ws2[ws2$state == "Blue Nile" & ws2$locality == "El Damazin", "locality"] <- "El Damazine"
+ws2[ws2$state == "Blue Nile" & ws2$locality == "El Damazin", "locality"] <- "Ed Damazine"
 ws2[ws2$state == "Blue Nile" & ws2$locality == "Tadamoon", "locality"] <- "El Tadamon"
 ws2[ws2$state == "Blue Nile" & ws2$locality == "ElRosairs", "locality"] <- "El Roseiris"
 ws2[ws2$state == "Blue Nile" & ws2$locality == "Wd almahi", "locality"] <- "Wad El Mahi"
