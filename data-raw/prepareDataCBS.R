@@ -38,8 +38,8 @@ ws2$state <- ifelse(ws2$state == "Sennar", "Sinar", ws2$state)
 ## Al-Gadarif
 ws2$locality[ws2$state == "Al-Gadarif"]
 ws2[ws2$state == "Al-Gadarif" & ws2$locality == "Gedaref", "locality"] <- "Gedaref Town"
-ws2[ws2$state == "Al-Gadarif" & ws2$locality == "MID Gedarif", "locality"] <- "Middle Gedaref"
-ws2[ws2$state == "Al-Gadarif" & ws2$locality == "Elbotana", "locality"] <- "Elbutana"
+ws2[ws2$state == "Al-Gadarif" & ws2$locality == "MID Gedarif", "locality"] <- "Middle Geddaref"
+ws2[ws2$state == "Al-Gadarif" & ws2$locality == "Elbotana ", "locality"] <- "Elbutana"
 ws2[ws2$state == "Al-Gadarif" & ws2$locality == "Elfashaga", "locality"] <- "El Fashaga"
 ws2[ws2$state == "Al-Gadarif" & ws2$locality == "Elrahad", "locality"] <- "El Rahad"
 ws2[ws2$state == "Al-Gadarif" & ws2$locality == "Gala alnahal", "locality"] <- "Gala-a El Nahal"
