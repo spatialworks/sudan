@@ -130,13 +130,13 @@ ws2[ws2$state == "North Darfur" & ws2$locality == "Kotum", "locality"] <- "Kutum
 ws2[ws2$state == "North Darfur" & ws2$locality == "Elmalha", "locality"] <- "El Mahalha"
 ## Saraf Omra - ok
 ws2[ws2$state == "North Darfur" & ws2$locality == "Elsiraif", "locality"] <- "El Serief"
-##ws2[ws2$state == "North Darfur" & ws2$locality == "Alwaha", "locality"] <- "???"
+ws2[ws2$state == "North Darfur" & ws2$locality == "Alwaha", "locality"] <- "AlWaha"
 ws2[ws2$state == "North Darfur" & ws2$locality == "Dar-Alsalam", "locality"] <- "Dar Elsalam"
 ws2[ws2$state == "North Darfur" & ws2$locality == "Klamindo", "locality"] <- "Kelemando"
 ws2[ws2$state == "North Darfur" & ws2$locality == "Altiwasha", "locality"] <- "El Tawisha"
 ws2[ws2$state == "North Darfur" & ws2$locality == "Am baro", "locality"] <- "Um Baru"
 ws2[ws2$state == "North Darfur" & ws2$locality == "Al-liayit", "locality"] <- "El Lait"
-ws2[ws2$state == "North Darfur" & ws2$locality == "Elkoma", "locality"] <- "Elkuma"
+ws2[ws2$state == "North Darfur" & ws2$locality == "Elkoma", "locality"] <- "ELkuma"
 ws2[ws2$state == "North Darfur" & ws2$locality == "alteena", "locality"] <- "El Tina"
 ws2[ws2$state == "North Darfur" & ws2$locality == "Kranoy", "locality"] <- "Kernoi"
 
