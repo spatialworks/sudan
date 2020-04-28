@@ -321,5 +321,6 @@ population_S3M$pop <- as.numeric(population_S3M$pop)
 ## Save in .rda format
 usethis::use_data(population_S3M, overwrite = TRUE, compress = "xz")
 
+write.csv(population_S3M, "data-raw/localityPops.csv", row.names = FALSE)
 
 
