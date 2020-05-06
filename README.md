@@ -27,7 +27,7 @@ You can install the development version of `sudan` from
 [GitHub](https://github.com/spatialworks/sudan) with:
 
 ``` r
-if(!requireNamespace(remotes)) install.packages("remotes")
+if(!requireNamespace("remotes")) install.packages("remotes")
 remotes::install_github("spatialworks/sudan")
 ```
 
