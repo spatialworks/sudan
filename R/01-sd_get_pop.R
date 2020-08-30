@@ -44,7 +44,7 @@ sd_get_page_locality <- function(page,
   ## Empty df to concatenate
   df <- NULL
   ## Loop through rows of xy
-  for(i in 1:nrow(xy)) {
+  for(i in seq_len(nrow(xy))) {
     ## Remove space
     df <- rbind(df, xy[i, ][xy[i, ] != ""])
   }

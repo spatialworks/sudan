@@ -99,3 +99,53 @@
 #
 ################################################################################
 "population_S3M"
+
+
+################################################################################
+#
+#'
+#' Map of states of Sudan
+#'
+#' @format A SpatialPolygonsDataFrame with 18 features and 10 fields
+#'
+#' | **Variables** | **Description** |
+#' | *OBJECTID_1* | Object identifier |
+#' | *POP_2008* | Population in 2008 |
+#' | *POP_2018* | Population in 2018 |
+#' | *POP2019* | Population in 2019 |
+#' | *State_En* | Name of state (English) |
+#' | *Shape_Le_2* | Shape size |
+#' | *Area_1* | Area size |
+#' | *Code_1* | Area code |
+#' | *stateID* | State identifier |
+#'
+#' @source Sudan Central Bureau of Statistics
+#'
+#
+################################################################################
+"states"
+
+
+################################################################################
+#
+#'
+#' Map of localities of Sudan
+#'
+#' @format A SpatialPolygonsDataFrame with 188 features and 11 fields.
+#'
+#' | **Variables** | **Description** |
+#' | *OBJECTID_1* | Object identifier 1 |
+#' | *OBJECTID* | Object identifier |
+#' | *Toto_Pop* | Total population |
+#' | *Name_Engli* | Name of state (English) |
+#' | *Locality_G* | Locality code |
+#' | *Shape_Le_2* | Shape size |
+#' | *Shape_Area* | Shape area |
+#' | *stateID* | State identifier |
+#' | *localityID* | Locality identifier |
+#'
+#' @source Sudan Central Bureau of Statistics
+#'
+#
+################################################################################
+"localities"
