@@ -11,14 +11,19 @@ Description: Designing surveys require relevant datasets to be used as basis for
     can be used for estimating indicator variance and design effects. This package
     contains relevant datasets for use in designing surveys in Sudan.
 License: GPL-3
+Depends: 
+    R (>= 2.10)
 Imports: 
     stringr,
     magrittr,
     tidyr
+Suggests: 
+    rgdal,
+    rgeos,
+    raster
 Encoding: UTF-8
+Language: en-GB
 LazyData: true
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
 URL: https://github.com/spatialworks/sudan,https://spatialworks.io/sudan
 BugReports: https://github.com/spatialworks/sudan/issues
-Depends: 
-    R (>= 2.10)
