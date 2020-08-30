@@ -11,6 +11,7 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 status](https://travis-ci.org/spatialworks/sudan.svg?branch=master)](https://travis-ci.org/spatialworks/sudan)
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/spatialworks/sudan?branch=master&svg=true)](https://ci.appveyor.com/project/spatialworks/sudan)
+[![CodeFactor](https://www.codefactor.io/repository/github/spatialworks/sudan/badge)](https://www.codefactor.io/repository/github/spatialworks/sudan)
 <!-- badges: end -->
 
 Designing surveys require relevant datasets to be used as basis for
