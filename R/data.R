@@ -109,6 +109,7 @@
 #' @format A SpatialPolygonsDataFrame with 18 features and 10 fields
 #'
 #' | **Variables** | **Description** |
+#' | :--- | :--- |
 #' | *OBJECTID_1* | Object identifier |
 #' | *POP_2008* | Population in 2008 |
 #' | *POP_2018* | Population in 2018 |
@@ -134,15 +135,17 @@
 #' @format A SpatialPolygonsDataFrame with 188 features and 11 fields.
 #'
 #' | **Variables** | **Description** |
+#' | :--- | :--- |
 #' | *OBJECTID_1* | Object identifier 1 |
 #' | *OBJECTID* | Object identifier |
 #' | *Toto_Pop* | Total population |
-#' | *Name_Engli* | Name of state (English) |
+#' | *Name_Engli* | Name of locality (English) |
 #' | *Locality_G* | Locality code |
 #' | *Shape_Le_2* | Shape size |
 #' | *Shape_Area* | Shape area |
 #' | *stateID* | State identifier |
 #' | *localityID* | Locality identifier |
+#' | *State_En* | Name of state (English) |
 #'
 #' @source Sudan Central Bureau of Statistics
 #'
