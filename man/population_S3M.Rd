@@ -9,9 +9,9 @@ in S3M analysis}
 \format{
 A data.frame of 3 columns and 192 rows:
 \describe{
-  \item{\code{state}}{State name}
-  \item{\code{locality}}{Locality name}
-  \item{\code{pop}}{Population}
+\item{\code{state}}{State name}
+\item{\code{locality}}{Locality name}
+\item{\code{pop}}{Population}
 }
 }
 \source{

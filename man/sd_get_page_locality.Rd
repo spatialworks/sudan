@@ -32,7 +32,7 @@ reporting year}
 }
 \value{
 A data.frame of population data from the given page and specified
-  years
+years
 }
 \description{
 Exract per page locality population tables from a PDF copy of the UNFPA's

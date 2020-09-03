@@ -8,7 +8,7 @@ sd_tidy_pop()
 }
 \value{
 A tibble containing 6 columns and 110808 rows that is a longer
-  format version of the UNFPA population dataset
+format version of the UNFPA population dataset
 }
 \description{
 A convenience wrapper to tidyr::pivot_longer to switch population projections

@@ -21,7 +21,7 @@ Designing surveys require relevant datasets to be used as basis for
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/spatialworks/sudan,https://spatialworks.io/sudan}
+  \item \url{https://github.com/spatialworks/sudan,https://spatialworks.io/sudan/}
   \item Report bugs at \url{https://github.com/spatialworks/sudan/issues}
 }
 

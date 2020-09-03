@@ -5,18 +5,18 @@
 \alias{states}
 \title{Map of states of Sudan}
 \format{
-A SpatialPolygonsDataFrame with 18 features and 10 fields
-
-| **Variables** | **Description** |
-| *OBJECTID_1* | Object identifier |
-| *POP_2008* | Population in 2008 |
-| *POP_2018* | Population in 2018 |
-| *POP2019* | Population in 2019 |
-| *State_En* | Name of state (English) |
-| *Shape_Le_2* | Shape size |
-| *Area_1* | Area size |
-| *Code_1* | Area code |
-| *stateID* | State identifier |
+A SpatialPolygonsDataFrame with 18 features and 10 fields\tabular{ll}{
+   \strong{Variables} \tab \strong{Description} \cr
+   \emph{OBJECTID_1} \tab Object identifier \cr
+   \emph{POP_2008} \tab Population in 2008 \cr
+   \emph{POP_2018} \tab Population in 2018 \cr
+   \emph{POP2019} \tab Population in 2019 \cr
+   \emph{State_En} \tab Name of state (English) \cr
+   \emph{Shape_Le_2} \tab Shape size \cr
+   \emph{Area_1} \tab Area size \cr
+   \emph{Code_1} \tab Area code \cr
+   \emph{stateID} \tab State identifier \cr
+}
 }
 \source{
 Sudan Central Bureau of Statistics

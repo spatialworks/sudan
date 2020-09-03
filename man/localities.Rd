@@ -5,18 +5,19 @@
 \alias{localities}
 \title{Map of localities of Sudan}
 \format{
-A SpatialPolygonsDataFrame with 188 features and 11 fields.
-
-| **Variables** | **Description** |
-| *OBJECTID_1* | Object identifier 1 |
-| *OBJECTID* | Object identifier |
-| *Toto_Pop* | Total population |
-| *Name_Engli* | Name of state (English) |
-| *Locality_G* | Locality code |
-| *Shape_Le_2* | Shape size |
-| *Shape_Area* | Shape area |
-| *stateID* | State identifier |
-| *localityID* | Locality identifier |
+A SpatialPolygonsDataFrame with 188 features and 11 fields.\tabular{ll}{
+   \strong{Variables} \tab \strong{Description} \cr
+   \emph{OBJECTID_1} \tab Object identifier 1 \cr
+   \emph{OBJECTID} \tab Object identifier \cr
+   \emph{Toto_Pop} \tab Total population \cr
+   \emph{Name_Engli} \tab Name of locality (English) \cr
+   \emph{Locality_G} \tab Locality code \cr
+   \emph{Shape_Le_2} \tab Shape size \cr
+   \emph{Shape_Area} \tab Shape area \cr
+   \emph{stateID} \tab State identifier \cr
+   \emph{localityID} \tab Locality identifier \cr
+   \emph{State_En} \tab Name of state (English) \cr
+}
 }
 \source{
 Sudan Central Bureau of Statistics
